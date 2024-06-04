@@ -1,6 +1,7 @@
 package com.example.liveactivty
 
 import android.app.Application
+import android.app.Notification.VISIBILITY_PUBLIC
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -16,7 +17,12 @@ class LiveActivityApplication: Application() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Delivery Status"
             val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel = NotificationChannel(CHANNEL_ID, name, importance)
+            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+                enableVibration(false)
+                enableLights(false)
+                setImportance(NotificationManager.IMPORTANCE_DEFAULT)
+                lockscreenVisibility = VISIBILITY_PUBLIC
+            }
             val notificationManager: NotificationManager =
                 this.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)

@@ -5,42 +5,22 @@
     android:layout_width="match_parent">
 
     <TextView
-        style="@style/TextAppearance.Compat.Notification.Title"
         android:id="@+id/title"
-        android:layout_height="wrap_content"
+        style="@style/TextAppearance.Compat.Notification.Title"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Pick up in 1 min"
-        android:textSize="16sp" />
-
-
-    <TextView
-        style="@style/TextAppearance.Compat.Notification.Info"
-        android:id="@+id/content"
-        android:layout_below="@+id/title"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="TDU3065 Grey Toyota Corolla"
         android:textSize="16sp" />
 
     <ImageView
         android:id="@+id/user"
-        android:layout_alignEnd="@+id/content"
         android:layout_alignParentEnd="true"
         android:layout_height="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginTop="12dp"
         android:layout_width="40dp"
         android:elevation="1dp"
         android:src="@drawable/baseline_account_circle_24" />
-
-    <ImageView
-        android:id="@+id/car"
-        android:layout_height="40dp"
-        android:layout_width="40dp"
-        android:layout_alignStart="@+id/user"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="12dp"
-        android:src="@drawable/hatchback" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -48,7 +28,7 @@
         android:layout_height="2dp"
         style="?android:attr/progressBarStyleHorizontal"
         android:progressDrawable="@drawable/car_position1"
-        android:layout_below="@+id/content"
+        android:layout_below="@+id/user"
         android:layout_marginTop="16dp"
         />
 

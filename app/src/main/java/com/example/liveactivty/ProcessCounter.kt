@@ -13,7 +13,7 @@ class ProcessCounter {
         while (isRunning){
             emit(processValue)
             delay(1000L)
-            processValue++
+            processValue += 1
         }
     }
 
